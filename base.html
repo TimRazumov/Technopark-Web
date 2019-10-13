@@ -26,21 +26,27 @@
 				</form>
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
+						<a class="nav-link" href="#"> Новый вопрос </a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="#"> Мои вопросы </a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#"> Мои ответы </a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Данные </a>
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Инфа </a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="#"> Настройки </a>
 							<a class="dropdown-item" href="#"> Помощь </a>
-							<a class="dropdown-item" href="#"> Выйти </a>
+							<a class="dropdown-item" href="#"> Выход </a>
 						</div>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#"> Войти </a>
+						<a class="nav-link" href="#"> Вход </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Регистрация </a>
 					</li>
 				</ul>
 			</div>
@@ -49,35 +55,90 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 
-			<div class="col-md-6">
+			<div class="col-md-7">
 				<h3> Вопросы </h3>	
-				<div class="card mb-3 " style="max-width: 540px;">
-					<div class="row no-gutters">
-
-						<div class="col-md-4" style="padding: 1.25rem;">
-							<img src="static/img/ricardo.jpg" class="card-img" alt="...">
-						</div>
-
+				<div class="card mb-3 " style="max-width: 800px;">
+				    <div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="static/img/ricardo.jpg" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+							<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+								<img src="static/img/like.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-success">10</span>
+							</button>
+							<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+								<img src="static/img/dislike.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-danger">0</span>
+							</button>
+					    </div>
 						<div class="col-md-8">
 							<div class="card-body">
-								<h5 class="card-title"> Почеу нельзя ходить по 11-му этажу с курткой? </h5>
+								<h5 class="card-title"> Почему нельзя ходить по 11-му этажу с курткой? </h5>
 								<p class="card-text"> Недавно приехал в Россию. Тут холодно, поэтому хожу в куртке. Пришел в ней на 11-й этаж бомонки, но злая бабка меня выгнала, так как под ней ничего нет. Что делать? </p>
+								<p> 
+									<span style="margin-right: 20%"> <a href="URL"> Ответы (3) </a> </span>
+									Теги:
+									    <a href="URL"> #Куртка </a> 
+									    <a href="URL"> #Зима </a> <!-- TODO поставить нужный урл -->
+								</p>
 								<p class="card-text"><small class="text-muted"> Последнее обновление 3 минуты назад </small></p>
-							</div>
-						</div>
-
+						    </div>
+					    </div>
 					</div>
 				</div>
-			</div>
+
+				<div class="card mb-3 " style="max-width: 800px;">
+				    <div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="static/img/kozer.jpg" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+							<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+								<img src="static/img/like.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-success">1</span>
+							</button>
+							<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+								<img src="static/img/dislike.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-danger">15</span>
+							</button>
+					    </div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title"> Какой-то вопрос от козера? </h5>
+								<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
+								<p> 
+									<span style="margin-right: 20%"> <a href="URL"> Ответы (10) </a> </span>
+									Теги:
+									    <a href="URL"> #Козер </a> <!-- TODO поставить нужный урл -->
+								</p>
+								<p class="card-text"><small class="text-muted"> Последнее обновление 10 минут назад </small></p>
+						    </div>
+					    </div>
+					</div>
+				</div>
+		    </div>
+
+
 
 			<div class="col-md-4">
 				<h3> Популярные теги </h3>
+				<div class="card mb-3 " style="max-width: 350px;">
+					<div style="margin-left: 5%; margin-top: 5%;">
+					    <p>
+						    <a href="URL"> #Саша </a>
+						    <a href="URL"> #Киса </a> 
+					    </p>
+					</div>
+				</div>
+				<h3> Лучшие пользователи </h3>
+				<div class="card mb-3 " style="max-width: 350px;">
+					<div style="margin-left: 5%; margin-top: 5%;">
+					    <p>Саша Киса</p>
+					    <p>Даниэль Пак</p>
+					    <p>Бетти Симонс (aka Ислам Отажанов)</p>
+					</div>
+				</div>
 			</div>
-
-			<div class="col-md-1"></div>
 		</div>
 
-		<!-- Optional JavaScript -->
+		<!-- Optional JavaScript-->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="static/node_modules/jquery/jquery.min.js"></script>
 		<script src="static/node_modules/popper.js/dist/umd/popper.min.js"></script>
