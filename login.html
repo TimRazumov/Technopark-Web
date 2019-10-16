@@ -1,0 +1,114 @@
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+		<title> Форум бомонки </title>
+	</head>
+	<body>
+		<!-- Шапка -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">
+				<img src="static/img/logo_bmstu.jpg" width="30" height="30" class="d-inline-block align-top" alt=""> Форум бомонки
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Поиск">
+				</form>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Новый вопрос </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Мои вопросы </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Мои ответы </a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Инфа </a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#"> Настройки </a>
+							<a class="dropdown-item" href="#"> Помощь </a>
+							<a class="dropdown-item" href="#"> Выход </a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Вход </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Регистрация </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<form>
+			<div class="row needs-validation" style="margin-top: 1%">
+				<div class="col-md-1"></div>
+				
+				<div class="col-md-5">
+					<h3> Вход </h3>
+					<div class="form-group row">
+						<label for="colFormLabel" class="col-sm-5 col-form-label"> Логин </label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="colFormLabel" required>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="colFormLabel1" class="col-sm-5 col-form-label"> Пароль </label>
+						<div class="col-sm-7">
+							<input type="password" class="form-control is-invalid" id="colFormLabel1" required>
+							<div class="invalid-feedback">
+                                Введите правильный пароль или логин
+                            </div>
+                            <div style="margin-top: 5%">
+							    <button type="submit" class="btn btn-success"> Войти </button>
+						    </div>
+                            <div style="margin-top: 5%">
+							    <a href="url" style="margin-top: 5%"> Создать новый аккаунт </a>
+						    </div>
+						</div>
+					</div>		
+				</div>
+
+				<div class="col-md-2"></div>
+
+				<div class="col-md-4">
+					<h3> Популярные теги </h3>
+					<div class="card mb-3 " style="max-width: 350px;">
+						<div style="margin-left: 5%; margin-top: 5%;">
+							<p>
+								<a href="URL"> #Саша </a>
+								<a href="URL"> #Киса </a> 
+							</p>
+						</div>
+					</div>
+					<h3> Лучшие пользователи </h3>
+					<div class="card mb-3 " style="max-width: 350px;">
+						<div style="margin-left: 5%; margin-top: 5%;">
+							<p> <a href="URL"> Саша Киса </a> </p>
+							<p> <a href="URL"> Даниэль Пак </a> </p> 
+							<p> <a href="URL"> Бетти Симонс (aka Ислам Отажанов) </a> </p>
+						</div>
+					</div>
+				</div>
+			</div> <!-- TODO: имена id и url-->
+		</form>
+
+		<!-- Optional JavaScript-->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="static/node_modules/jquery/jquery.min.js"></script>
+		<script src="static/node_modules/popper.js/dist/umd/popper.min.js"></script>
+		<script src="static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	</body>
+	</html>
