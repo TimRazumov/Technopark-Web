@@ -1,0 +1,199 @@
+	<!doctype html>
+	<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+		<title> Форум бомонки </title>
+	</head>
+	<body>
+		<!-- Шапка -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">
+				<img src="static/img/logo_bmstu.jpg" width="30" height="30" class="d-inline-block align-top" alt=""> Форум бомонки
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsExample04">
+				<form class="form-inline my-2 my-md-0">
+					<input class="form-control" type="text" placeholder="Поиск">
+				</form>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Новый вопрос </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Мои вопросы </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Мои ответы </a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Инфа </a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="#"> Настройки </a>
+							<a class="dropdown-item" href="#"> Помощь </a>
+							<a class="dropdown-item" href="#"> Выход </a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Вход </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"> Регистрация </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="row" style="margin-top: 1%">
+			<div class="col-md-1"></div>
+
+			<div class="col-md-7">
+				<h3> Вопрос </h3>	
+				<div class="card mb-3 " style="max-width: 800px;">
+				    <div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="static/img/ricardo.jpg" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+							<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+								<img src="static/img/like.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-success">10</span>
+							</button>
+							<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+								<img src="static/img/dislike.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-danger">0</span>
+							</button>
+					    </div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title"> Почему нельзя ходить по 11-му этажу с курткой? </h5>
+								<p class="card-text"> Недавно приехал в Россию. Тут холодно, поэтому хожу в куртке. Пришел в ней на 11-й этаж бомонки, но злая бабка меня выгнала, так как под ней ничего нет. Что делать? </p>
+								<p>
+									Теги:
+									    <a href="URL"> #Куртка </a> 
+									    <a href="URL"> #Зима </a> <!-- TODO поставить нужный урл -->
+								</p>
+						    </div>
+					    </div>
+					</div>
+				</div>
+
+				<h3> Ответы </h3>
+
+				<div class="card mb-3 " style="max-width: 800px;">
+				    <div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="static/img/kozer.jpg" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+							<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+								<img src="static/img/like.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-success">100</span>
+							</button>
+							<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+								<img src="static/img/dislike.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-danger">1</span>
+							</button>
+					    </div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
+								<div class="custom-control custom-checkbox" style="margin-top: 10%;">
+						    	    <input type="checkbox" class="custom-control-input" id="customCheckDisabled" checked disabled>
+						    	    <label class="custom-control-label" for="customCheckDisabled">Правильный ответ!</label>
+						        </div>
+						    </div>
+					    </div>
+					</div>
+				</div>
+
+				<div class="card mb-3 " style="max-width: 800px;">
+				    <div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="static/img/kozer.jpg" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+							<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+								<img src="static/img/like.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-success">1</span>
+							</button>
+							<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+								<img src="static/img/dislike.jpg" width="25" height="25" alt="...">
+								<span class="badge badge-danger">15</span>
+							</button>
+					    </div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
+								<div class="custom-control custom-checkbox" style="margin-top: 10%;">
+						    	    <input type="checkbox" class="custom-control-input" id="customCheckDisabled" disabled>
+						    	    <label class="custom-control-label" for="customCheckDisabled">Правильный ответ!</label>
+						        </div>
+						    </div>
+					    </div>
+					</div>
+				</div>
+
+				<form>
+
+				    <h3> Добавить ответ </h3>	
+				    <div class="form-group row">
+					    <label for="colFormLabel" class="col-sm-2 col-form-label"> Текст ответа </label>
+					    <div class="col-sm-10">
+						    <textarea class="form-control" aria-label="With textarea" rows="10" required></textarea>
+						    <button type="submit" class="btn btn-success" style="margin-top: 5%"> Ответить </button>
+					    </div>
+				    </div>
+			    </form>
+
+		    </div>
+
+			<div class="col-md-4">
+				<h3> Популярные теги </h3>
+				<div class="card mb-3 " style="max-width: 350px;">
+					<div style="margin-left: 5%; margin-top: 5%;">
+					    <p>
+						    <a href="URL"> #Саша </a>
+						    <a href="URL"> #Киса </a> 
+					    </p>
+					</div>
+				</div>
+				<h3> Лучшие пользователи </h3>
+				<div class="card mb-3 " style="max-width: 350px;">
+					<div style="margin-left: 5%; margin-top: 5%;">
+					    <p> <a href="URL"> Саша </a> </p>
+					    <p> <a href="URL"> Даниэль Пак </a> </p> 
+					    <p> <a href="URL"> Бетти Симонс (aka Ислам Отажанов) </a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<nav aria-label="..." style="margin-left: 8.5%;">
+			<ul class="pagination">
+				<li class="page-item disabled">
+					<span class="page-link"> Назад </span>
+				</li>
+				<li class="page-item"><a class="page-link" href="#"> 1 </a></li>
+				<li class="page-item active" aria-current="page">
+					<span class="page-link">
+						2
+						<span class="sr-only">(current)</span>
+					</span>
+				</li>
+				<li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+				<li class="page-item">
+					<a class="page-link" href="#"> Вперед </a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Optional JavaScript-->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="static/node_modules/jquery/jquery.min.js"></script>
+		<script src="static/node_modules/popper.js/dist/umd/popper.min.js"></script>
+		<script src="static/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	</body>
+	</html>
