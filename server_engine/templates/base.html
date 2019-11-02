@@ -1,0 +1,115 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" >
+
+	<title> Форум бомонки </title>
+</head>
+
+<body>
+	<!-- Шапка -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<a class="navbar-brand" href="{% url 'questions_list_url' %}">
+			<img src="{% static 'img/logo_bmstu.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt=""> Форум бомонки
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExample04">
+			<form class="form-inline my-2 my-md-0">
+				<input class="form-control" type="text" placeholder="Поиск">
+			</form>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'ask_url' %}"> Новый вопрос </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Мои вопросы </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"> Мои ответы </a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Инфа </a>
+					<div class="dropdown-menu" aria-labelledby="dropdown04">
+						<a class="dropdown-item" href="#"> Настройки </a>
+						<a class="dropdown-item" href="#"> Помощь </a>
+						<a class="dropdown-item" href="#"> Выход </a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'login_url' %}"> Вход </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'signup_url' %}"> Регистрация </a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="row" style="margin-top: 1%">
+		<div class="col-md-1"></div>
+
+		<div class="col-md-7">
+			{% block content %}
+			no application
+			{% endblock content %}
+		</div>
+
+		<div class="col-md-4">
+			<h3> Популярные теги </h3>
+			<div class="card mb-3 " style="max-width: 350px;">
+				<div style="margin-left: 5%; margin-top: 5%;">
+					<p>
+						<a href="URL"> #Саша </a>
+						<a href="URL"> #Киса </a> 
+					</p>
+				</div>
+			</div>
+			<h3> Лучшие пользователи </h3>
+			<div class="card mb-3 " style="max-width: 350px;">
+				<div style="margin-left: 5%; margin-top: 5%;">
+					<p> <a href="URL"> Саша </a> </p>
+					<p> <a href="URL"> Даниэль Пак </a> </p> 
+					<p> <a href="URL"> Бетти Симонс (aka Ислам Отажанов) </a> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<nav aria-label="..." style="margin-left: 8.5%;">
+		<ul class="pagination">
+			<li class="page-item disabled">
+				<span class="page-link"> Назад </span>
+			</li>
+			<li class="page-item"><a class="page-link" href="#"> 1 </a></li>
+			<li class="page-item active" aria-current="page">
+				<span class="page-link">
+					2
+					<span class="sr-only">(current)</span>
+				</span>
+			</li>
+			<li class="page-item"><a class="page-link" href="#"> 3 </a></li>
+			<li class="page-item">
+				<a class="page-link" href="#"> Вперед </a>
+			</li>
+		</ul>
+	</nav>
+
+	<!-- Optional JavaScript-->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="{% static 'node_modules/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
+	<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

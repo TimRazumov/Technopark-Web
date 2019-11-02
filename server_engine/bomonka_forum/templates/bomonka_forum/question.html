@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h3> Вопрос </h3>	
+<div class="card mb-3 " style="max-width: 800px;">
+	<div class="row no-gutters">
+		<div class="col-md-4">
+			<img src="{% static 'img/ricardo.jpg' %}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-success">10</span>
+			</button>
+			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-danger">0</span>
+			</button>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title"> Почему нельзя ходить по 11-му этажу с курткой? </h5>
+				<p class="card-text"> Недавно приехал в Россию. Тут холодно, поэтому хожу в куртке. Пришел в ней на 11-й этаж бомонки, но злая бабка меня выгнала, так как под ней ничего нет. Что делать? </p>
+				<p> 
+					Теги:
+					<a href="URL"> #Куртка </a> 
+					<a href="URL"> #Зима </a> <!-- TODO поставить нужный урл -->
+				</p>
+				<p class="card-text"><small class="text-muted"> Последнее обновление 3 минуты назад </small></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h3> Ответы </h3>
+<div class="card mb-3 " style="max-width: 800px;">
+	<div class="row no-gutters">
+		<div class="col-md-4">
+			<img src="{% static 'img/kozer.jpg' %}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-success">100</span>
+			</button>
+			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-danger">1</span>
+			</button>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
+				<div class="custom-control custom-checkbox" style="margin-top: 10%;">
+					<input type="checkbox" class="custom-control-input" id="customCheckDisabled" checked disabled>
+					<label class="custom-control-label" for="customCheckDisabled">Правильный ответ!</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card mb-3 " style="max-width: 800px;">
+	<div class="row no-gutters">
+		<div class="col-md-4">
+			<img src="{% static 'img/kozer.jpg' %}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-success">100</span>
+			</button>
+			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-danger">1</span>
+			</button>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
+				<div class="custom-control custom-checkbox" style="margin-top: 10%;">
+					<input type="checkbox" class="custom-control-input" id="customCheckDisabled" disabled>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<form>
+	<h3> Добавить ответ </h3>	
+	<div class="form-group row">
+		<label for="colFormLabel" class="col-sm-2 col-form-label"> Текст ответа </label>
+		<div class="col-sm-10">
+			<textarea class="form-control" aria-label="With textarea" rows="10" required></textarea>
+			<button type="submit" class="btn btn-success" style="margin-top: 5%"> Ответить </button>
+		</div>
+	</div>
+</form>
+
+{% endblock content %}

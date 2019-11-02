@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<h3> Вопросы </h3>	
+<div class="card mb-3 " style="max-width: 800px;">
+	<div class="row no-gutters">
+		<div class="col-md-4">
+			<img src="{% static 'img/ricardo.jpg' %}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-success">10</span>
+			</button>
+			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
+				<span class="badge badge-danger">0</span>
+			</button>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title"> Почему нельзя ходить по 11-му этажу с курткой? </h5>
+				<p class="card-text"> Недавно приехал в Россию. Тут холодно, поэтому хожу в куртке. Пришел в ней на 11-й этаж бомонки, но злая бабка меня выгнала, так как под ней ничего нет. Что делать? </p>
+				<p> 
+					<span style="margin-right: 20%"> <a href="{% url 'question_url' %}"> Ответы (2) </a> </span>
+					Теги:
+					<a href="URL"> #Куртка </a> 
+					<a href="URL"> #Зима </a> <!-- TODO поставить нужный урл -->
+				</p>
+				<p class="card-text"><small class="text-muted"> Последнее обновление 3 минуты назад </small></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %} 
+
+	<!-- <div class="card mb-3 " style="max-width: 800px;">
+		<div class="row no-gutters">
+			<div class="col-md-4">
+				<img src="static/img/kozer.jpg" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
+				<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
+					<img src="static/img/like.jpg" width="25" height="25" alt="...">
+					<span class="badge badge-success">1</span>
+				</button>
+				<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
+					<img src="static/img/dislike.jpg" width="25" height="25" alt="...">
+					<span class="badge badge-danger">15</span>
+				</button>
+			</div>
+			<div class="col-md-8">
+				<div class="card-body">
+					<h5 class="card-title"> Какой-то вопрос от козера? </h5>
+					<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
+					<p> 
+						<span style="margin-right: 20%"> <a href="URL"> Ответы (10) </a> </span>
+						Теги:
+						<a href="URL"> #Козер </a>
+					</p>
+					<p class="card-text"><small class="text-muted"> Последнее обновление 10 минут назад </small></p>
+				</div>
+			</div>
+		</div>
+	</div> -->
