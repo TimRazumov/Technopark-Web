@@ -4,7 +4,16 @@
 
 {% block content %}
 
-<h3> Вопросы </h3>
+<div class="row mb-3">
+    <div class="col-md-4">
+        <a href="{% url 'questions_new_url' %}" class="btn btn-outline-success btn-lg" 
+        role="button" aria-pressed="true"> Новые вопросы </a>
+    </div>
+	<div class="col-md-8">
+        <a href="{% url 'questions_top_url' %}" class="btn btn-outline-danger btn-lg" 
+        role="button" aria-pressed="true"> Лучшие вопросы </a>
+    </div>
+</div>
 
 {% for question in blogs %}
 <div class="card mb-3">
@@ -31,11 +40,11 @@
 			<div class="card-body">
 				<h5 class="card-title"> {{ question.title }} </h5>
 				<p class="card-text"> {{ question.body }} </p>
-				
+
 				<div class="row">
 		            <div class="col-md-6">
 					    <a href="{% url 'question_info_url' slug=question.slug%}"> 
-					        Ответы (2) 
+					        Ответы({{ question.answers.count }})
 					    </a>
 					</div>
 					<div class="col-md-6">
