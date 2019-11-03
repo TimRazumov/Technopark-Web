@@ -4,37 +4,52 @@
 
 {% block content %}
 
-
 <h3> Вопросы </h3>
 
 {% for question in blogs %}
-<div class="card mb-3 " style="max-width: 800px;">
+<div class="card mb-3">
 	<div class="row no-gutters">
 		<div class="col-md-4">
-			<img src="/{{ question.author.avatar }}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
-			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
-				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-success"> {{ question.like }} </span>
-			</button>
-			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
-				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-danger"> {{ question.dislike }} </span>
-			</button>
+			<div class="text-center card-body">
+			    <h5 class="card-title">
+				    {{ question.author }}
+				</h5>
+				<p class="card-text">
+			        <img src="/{{ question.author.avatar }}" width="230" height="150" alt="...">
+			    </p>
+			    <button type="button" class="btn btn-white">
+				    <img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
+				    <span class="badge badge-success"> {{ question.like }} </span>
+			    </button>
+			    <button type="button" class="btn btn-white">
+				    <img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
+				    <span class="badge badge-danger"> {{ question.dislike }} </span>
+			    </button>
+			</div>
 		</div>
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="card-title"> {{ question.title }} </h5>
 				<p class="card-text"> {{ question.body }} </p>
-				<p> 
-					<span style="margin-right: 20%"> 
-						<a href="{% url 'question_url' slug=question.slug%}"> 
+				
+				<div class="row">
+		            <div class="col-md-6">
+					    <a href="{% url 'question_info_url' slug=question.slug%}"> 
 					        Ответы (2) 
-					    </a> 
-					</span>
-					Теги:
-
+					    </a>
+					</div>
+					<div class="col-md-6">
+					    <p>
+					        Теги:
+					    </p>
+					</div>
+				</div>
+				
+				<p class="card-text">
+					<small class="text-muted"> 
+					    Дата публикации: {{ question.datetime_published }}
+				    </small>
 				</p>
-				<p class="card-text"><small class="text-muted"> Последнее обновление 3 минуты назад </small></p>
 			</div>
 		</div>
 	</div>

@@ -18,15 +18,15 @@ def paginator(request, object_list, amount):
 
     is_paginated = page.has_other_pages()
 
+    next_url = ''
+    
     if page.has_next():
         next_url = f'?page={page.next_page_number()}'
-    else:
-        next_url = ''
 
+    prev_url = ''
     if page.has_previous():
         prev_url = f'?page={page.previous_page_number()}'
-    else:
-        prev_url = ''
+
 
     context = {
         'blogs': page,
@@ -64,17 +64,17 @@ QUESTIONS_PER_PAGE = 3
 
 
 def redirect_new(request):
-    return redirect('questions_list_new_url', permanent=True)
+    return redirect('questions_new_url', permanent=True)
     
 
-def questions_list(request):
+def questions_new(request):
     questions = Question.objects.show_new()
 
     context = paginator(request, questions, QUESTIONS_PER_PAGE)
     return render(request, 'bomonka_forum/index.html', context=context)
 
 
-def questions_list_top(request):
+def questions_top(request):
     search_query = request.GET.get('search', '')
 
     if search_query:
@@ -86,7 +86,7 @@ def questions_list_top(request):
     return render(request, 'bomonka_forum/index.html', context=context)
 
 
-def question(request, slug):
+def question_info(request, slug):
     q = get_object_or_404(Question, slug__iexact=slug)
     return render(request, 'bomonka_forum/question.html', context={'question': q})
 
