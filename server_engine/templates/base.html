@@ -39,7 +39,8 @@
 					<a class="nav-link" href="#"> Мои ответы </a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Инфа </a>
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" 
+					aria-haspopup="true" aria-expanded="false"> Инфа </a>
 					<div class="dropdown-menu" aria-labelledby="dropdown04">
 						<a class="dropdown-item" href="#"> Настройки </a>
 						<a class="dropdown-item" href="#"> Помощь </a>
@@ -65,7 +66,7 @@
 			{% endblock content %}
 
 			{% if is_paginated %}
-				<ul class="pagination mb-0">
+				<ul class="pagination">
 					<li class="page-item {% if not prev_url %} disabled {% endif %}">
 						<a class="page-link" href="{{ prev_url }}" tabindex="-1"> Назад </a>
 					</li>

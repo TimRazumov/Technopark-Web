@@ -30,9 +30,7 @@ class Profile(models.Model):
     class Meta:
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
-        '''
-        ordering = ['-like', '-dislike']
-        '''
+
 class QuestionManager(models.Manager):
     def show_new(self):
         return self.order_by('-datetime_published')
@@ -82,7 +80,7 @@ class Answer(models.Model):
     class Meta:
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
-        '''ordering = ['-like', '-dislike']'''
+        ordering = ['-num_like', '-num_dislike']
 
 class Tag(models.Model):
     title = models.CharField(max_length=50, unique=True)

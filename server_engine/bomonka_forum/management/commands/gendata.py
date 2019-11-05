@@ -21,9 +21,9 @@ def generate_users(user_size):
         Profile.objects.create(user=user, email=email)
         
 def generate_tags(tags_size):
-    tags = []
-    title = 'Cat'
+    tags = list(Tag.objects.all())
     for i in range(tags_size):
+        title = fake.text()[0:10].replace(" ", "")
         while title in tags:
             title = fake.text()[0:10].replace(" ", "")
         tags.append(title)
@@ -60,10 +60,28 @@ def generate_answers(answers_size):
         max = Question.objects.all().order_by("-pk")[0].pk
         min = Question.objects.all().order_by("pk")[0].pk
         questions = Question.objects.get(pk=random.randint(min, max))
-        correctness = random.choice((False, False, True))
+        correctness = random.choice((False, True))
         Answer.objects.create(body=body, author=author, correctness=correctness, num_like=num_like, num_dislike=num_dislike, questions=questions)
 
-generate_users(100)
-generate_tags(100)
-generate_questions(100)
-generate_answers(200)
+
+from django.core.management.base import BaseCommand, CommandError
+class Command(BaseCommand):
+    def add_arguments(self, parser):
+        parser.add_argument('--users', type=int)
+        parser.add_argument('--questions', type=int)
+        parser.add_argument('--answers', type=int)
+        parser.add_argument('--tags', type=int)
+
+    def handle(self, *args, **options):
+        if options['users']:
+            print("Generating users", options['users'])
+            generate_users(options['users'])
+        if options['questions']:
+            print("Generating questions", options['questions'])
+            generate_questions(options['questions'])
+        if options['answers']:
+            print("Generating answers", options['answers'])
+            generate_answers(options['answers'])
+        if options['tags']:
+            print("Generating tags", options['tags'])
+            generate_tags(options['tags'])

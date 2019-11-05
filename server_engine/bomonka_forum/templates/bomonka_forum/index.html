@@ -7,58 +7,7 @@
 <h3 class="md-3"> Вопросы </h3>
 
 {% for question in blogs %}
-<div class="card mb-3">
-	<div class="row no-gutters">
-		<div class="col-md-4">
-			<div class="text-center card-body">
-			    <h5 class="card-title">
-				    {{ question.author }}
-				</h5>
-				<p class="card-text">
-			        <img src="/{{ question.author.avatar }}" 
-			        width="200" height="150" alt="NO FACE">
-			    </p>
-			    <button type="button" class="btn btn-white">
-				    <img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
-				    <span class="badge badge-success"> {{ question.num_like }} </span>
-			    </button>
-			    <button type="button" class="btn btn-white">
-				    <img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
-				    <span class="badge badge-danger"> {{ question.num_dislike }} </span>
-			    </button>
-			</div>
-		</div>
-		<div class="col-md-8">
-			<div class="card-body">
-				<h5 class="card-title"> {{ question.title }} </h5>
-				<p class="card-text"> {{ question.body }} </p>
-
-				<div class="row">
-		            <div class="col-md-4">
-					    <a href="{% url 'question_info_url' slug=question.slug%}"> 
-					        Ответы({{ question.answers.count }})
-					    </a>
-					</div>
-					<div class="col-md-8">
-					    <p>
-					        Тэги:
-					        {% for tag in question.tags.all %}
-					            <a href="{% url 'question_tag_url' title=tag.title %}" 
-					            class="badge badge-secondary"> {{ tag.title }} </a>
-					        {% endfor %} 
-					    </p>
-					</div>
-				</div>
-				
-				<p class="card-text">
-					<small class="text-muted"> 
-					    Дата публикации: {{ question.datetime_published }}
-				    </small>
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
+  {% include 'bomonka_forum/question_card.html' %}
 {% endfor %}
 
 {% endblock content %}
