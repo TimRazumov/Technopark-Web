@@ -64,24 +64,31 @@
 			no application
 			{% endblock content %}
 
-			<ul class="pagination">
-				<li class="page-item disabled">
-					<span class="page-link"> Назад </span>
-				</li>
-				<li class="page-item">
-					<a class="page-link" href="#"> 1 </a>
-				</li>
-				<li class="page-item active" aria-current="page">
-					<span class="page-link">
-						2
-						<span class="sr-only">(current)</span>
-					</span>
-				</li>
-				<li class="page-item"><a class="page-link" href="#"> 3 </a></li>
-				<li class="page-item">
-					<a class="page-link" href="#"> Вперед </a>
-				</li>
-			</ul>
+			{% if is_paginated %}
+				<ul class="pagination mb-0">
+					<li class="page-item {% if not prev_url %} disabled {% endif %}">
+						<a class="page-link" href="{{ prev_url }}" tabindex="-1"> Назад </a>
+					</li>
+					{% for idx in page_object.paginator.page_range %}
+					    {% if page_object.number == idx %}
+					    <li class="page-item active" aria-current="page">
+						    <a class="page-link" href="?page={{ idx }}">
+						    	{{ idx }}
+							    <span class="sr-only">(current)</span>
+						    </a>
+					    </li>
+						{% elif idx > page_object.number|add:-3 and idx < page_object.number|add:3 %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{ idx }}">{{ idx }}</a>
+						</li>
+						{% endif %}
+					{% endfor %}
+					<li class="page-item {% if not next_url %} disabled {% endif %}">
+						<a class="page-link" href="{{ next_url }}" tabindex="-1"> Вперед </a>
+					</li>
+				</ul>
+			{% endif %}
+
 		</div>
 
 		<div class="col-md-3">

@@ -4,84 +4,105 @@
 
 {% block content %}
 
-<h3> Вопрос </h3>	
-<div class="card mb-3 " style="max-width: 800px;">
+<h3 class="md-3"> Вопрос </h3>
+
+<div class="card mb-3">
 	<div class="row no-gutters">
 		<div class="col-md-4">
-			<img src="{% static 'img/ricardo.jpg' %}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
-			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
-				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-success">10</span>
-			</button>
-			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
-				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-danger">0</span>
-			</button>
+			<div class="text-center card-body">
+			    <h5 class="card-title">
+				    {{ question.author }}
+				</h5>
+				<p class="card-text">
+			        <img src="/{{ question.author.avatar }}"
+			        width="200" height="150" alt="NO FACE">
+			    </p>
+			    <button type="button" class="btn btn-white">
+				    <img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
+				    <span class="badge badge-success"> {{ question.num_like }} </span>
+			    </button>
+			    <button type="button" class="btn btn-white">
+				    <img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
+				    <span class="badge badge-danger"> {{ question.num_dislike }} </span>
+			    </button>
+			</div>
 		</div>
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="card-title"> Почему нельзя ходить по 11-му этажу с курткой? </h5>
-				<p class="card-text"> Недавно приехал в Россию. Тут холодно, поэтому хожу в куртке. Пришел в ней на 11-й этаж бомонки, но злая бабка меня выгнала, так как под ней ничего нет. Что делать? </p>
-				<p> 
-					Теги:
-					<a href="URL"> #Куртка </a> 
-					<a href="URL"> #Зима </a> <!-- TODO поставить нужный урл -->
+				<h5 class="card-title"> {{ question.title }} </h5>
+				<p class="card-text"> {{ question.body }} </p>
+
+				<div class="row">
+		            <div class="col-md-4">
+					    <a href="{% url 'question_info_url' slug=question.slug%}"> 
+					        Ответы({{ question.answers.count }})
+					    </a>
+					</div>
+					<div class="col-md-8">
+					    <p>
+					        Тэги:
+					        {% for tag in question.tags.all %}
+					            <a href="{% url 'question_tag_url' title=tag.title %}" 
+					            class="badge badge-secondary"> {{ tag.title }} </a>
+					        {% endfor %} 
+					    </p>
+					</div>
+				</div>
+				
+				<p class="card-text">
+					<small class="text-muted"> 
+					    Дата публикации: {{ question.datetime_published }}
+				    </small>
 				</p>
-				<p class="card-text"><small class="text-muted"> Последнее обновление 3 минуты назад </small></p>
 			</div>
 		</div>
 	</div>
 </div>
 
-<h3> Ответы </h3>
-<div class="card mb-3 " style="max-width: 800px;">
-	<div class="row no-gutters">
-		<div class="col-md-4">
-			<img src="{% static 'img/kozer.jpg' %}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
-			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
-				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-success">100</span>
-			</button>
-			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
-				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-danger">1</span>
-			</button>
-		</div>
-		<div class="col-md-8">
-			<div class="card-body">
-				<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
-				<div class="custom-control custom-checkbox" style="margin-top: 10%;">
-					<input type="checkbox" class="custom-control-input" id="customCheckDisabled" checked disabled>
-					<label class="custom-control-label" for="customCheckDisabled">Правильный ответ!</label>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<h3 class="md-3"> Ответы </h3>
 
-<div class="card mb-3 " style="max-width: 800px;">
+{% for answer in question.answers.all %}
+<div class="card mb-3">
 	<div class="row no-gutters">
 		<div class="col-md-4">
-			<img src="{% static 'img/kozer.jpg' %}" width="250" height="150" alt="..." style="margin-left: 5%; margin-top: 5%;">
-			<button type="button" class="btn btn-white" style="margin-left: 20%; margin-top: 5%;">
-				<img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-success">100</span>
-			</button>
-			<button type="button" class="btn btn-white" style="margin-right: 10%; margin-top: 5%;">
-				<img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
-				<span class="badge badge-danger">1</span>
-			</button>
+			<div class="text-center card-body">
+			    <h5 class="card-title">
+				    {{ answer.author }}
+				</h5>
+				<p class="card-text">
+			        <img src="/{{ answer.author.avatar }}"
+			        width="200" height="150" alt="NO FACE">
+			    </p>
+			    <button type="button" class="btn btn-white">
+				    <img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
+				    <span class="badge badge-success"> {{ answer.num_like }} </span>
+			    </button>
+			    <button type="button" class="btn btn-white">
+				    <img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
+				    <span class="badge badge-danger"> {{ answer.num_dislike }} </span>
+			    </button>
+			</div>
 		</div>
 		<div class="col-md-8">
 			<div class="card-body">
-				<p class="card-text"> Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер. Козер? </p>
-				<div class="custom-control custom-checkbox" style="margin-top: 10%;">
-					<input type="checkbox" class="custom-control-input" id="customCheckDisabled" disabled>
+				<p class="card-text"> {{ answer.body }} </p>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="customCheckDisabled" disabled
+					{% if answer.correctness %}
+					    checked 
+					{% endif %}>
+					<label class="custom-control-label" for="customCheckDisabled"> Правильный ответ! </label>
 				</div>
+				<p class="card-text">
+					<small class="text-muted"> 
+					    Дата публикации: {{ answer.datetime }}
+				    </small>
+				</p>
 			</div>
 		</div>
 	</div>
 </div>
+{% endfor %}
 
 <form>
 	<h3> Добавить ответ </h3>	
