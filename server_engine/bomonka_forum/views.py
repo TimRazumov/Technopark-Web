@@ -1,15 +1,8 @@
-'''from django.shortcuts import render, get_object_or_404, redirect
-from django.core.paginator import Paginator
-from django.db.models import Q
-
-from .models import *'''
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.db.models import Q
 
 from .models import *
-
-QUESTIONS_PER_PAGE = 3
 
 def paginator(request, object_list, amount):
     paginator = Paginator(object_list, amount)
@@ -36,43 +29,16 @@ def paginator(request, object_list, amount):
     }
     return context
 
-
-
-'''
-def questions_list(request):
-    questions = Question.objects.show_new()
-    context = paginator(request, questions, QUESTIONS_PER_PAGE)
-    questions = range(0, 10)
-    return render(request, 'bomonka_forum/index.html', context = {"questions": questions})
-
-def login(request):
-    return render(request, 'bomonka_forum/login.html', context = {})
-
-def signup(request):
-    return render(request, 'bomonka_forum/signup.html', context = {})
-
-def question(request):
-    return render(request, 'bomonka_forum/question.html', context = {})
-
-def ask(request):
-    return render(request, 'bomonka_forum/ask.html', context = {})'''
-    
-    
-
-
 QUESTIONS_PER_PAGE = 3
-
 
 def redirect_new(request):
     return redirect('questions_new_url', permanent=True)
     
-
 def questions_new(request):
     questions = Question.objects.show_new()
 
     context = paginator(request, questions, QUESTIONS_PER_PAGE)
     return render(request, 'bomonka_forum/index.html', context=context)
-
 
 def questions_top(request):
     search_query = request.GET.get('search', '')
@@ -85,34 +51,22 @@ def questions_top(request):
     context = paginator(request, questions, QUESTIONS_PER_PAGE)
     return render(request, 'bomonka_forum/index.html', context=context)
 
+def questions_tag(request, title):
+    t = Tag.objects.get(title__iexact=title)
+    questions = t.questions_tags.all()
+    context = paginator(request, questions, QUESTIONS_PER_PAGE)
+    context['tag'] = t
+    return render(request, 'bomonka_forum/index.html', context=context)
 
 def question_info(request, slug):
     q = get_object_or_404(Question, slug__iexact=slug)
     return render(request, 'bomonka_forum/question.html', context={'question': q})
 
-
 def login(request):
     return render(request, 'bomonka_forum/login.html', context={})
-
 
 def signup(request):
     return render(request, 'bomonka_forum/signup.html', context={})
 
-
 def ask(request):
     return render(request, 'bomonka_forum/ask.html', context={})
-
-'''
-def tags(request):
-    tags = Tag.objects.all()
-    return render(request, 'bomonka_forum/tags.html', context={'tags': tags})
-
-
-def tag_detail(request, title):
-    t = Tag.objects.get(title__iexact=title)
-
-    questions = t.questions.all()
-    context = paginator(request, questions, QUESTIONS_PER_PAGE)
-
-    context['tag'] = t
-    return render(request, 'bomonka_forum/tag_detail.html', context)'''

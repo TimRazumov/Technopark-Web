@@ -85,21 +85,32 @@
 		</div>
 
 		<div class="col-md-3">
-			<div class="my-3"> 
-				<h3 class="md-3"> Популярные теги </h3>
-			</div>
-			<div class="card mb-3 card-body text-center">
-				<p>
+
+			<h3 class="md-3"> Популярные теги </h3>
+			<div class="card mb-3 card-body">
+				<h>
 					<a href="URL"> #Саша </a>
 					<a href="URL"> #Киса </a> 
-				</p>
+				</h>
 			</div>
+
 			<h3> Лучшие пользователи </h3>
-			<div class="card mb-3 card-body text-center">
+			<div class="card mb-3 card-body"> <!-- text-center -->
 				<p> <a href="URL"> Саша </a> </p>
 				<p> <a href="URL"> Даниэль Пак </a> </p> 
-				<p> <a href="URL"> Бетти Симонс </a> </p>
+				<h> <a href="URL"> Бетти Симонс </a> </h>
 			</div>
+
+			<div class="mb-3">
+				<a href="{% url 'questions_new_url' %}" class="btn btn-outline-success btn-lg" 
+				role="button" aria-pressed="true"> Новые вопросы </a>
+			</div>
+
+			<div class="mb-3">
+				<a href="{% url 'questions_top_url' %}" class="btn btn-outline-danger btn-lg" 
+				role="button" aria-pressed="true"> Лучшие вопросы </a>
+			</div>
+
 		</div>
 
 		<div class="col-md-1"></div>

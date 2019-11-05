@@ -4,16 +4,7 @@
 
 {% block content %}
 
-<div class="row mb-3">
-    <div class="col-md-4">
-        <a href="{% url 'questions_new_url' %}" class="btn btn-outline-success btn-lg" 
-        role="button" aria-pressed="true"> Новые вопросы </a>
-    </div>
-	<div class="col-md-8">
-        <a href="{% url 'questions_top_url' %}" class="btn btn-outline-danger btn-lg" 
-        role="button" aria-pressed="true"> Лучшие вопросы </a>
-    </div>
-</div>
+<h3 class="md-3"> Вопросы </h3>
 
 {% for question in blogs %}
 <div class="card mb-3">
@@ -24,15 +15,16 @@
 				    {{ question.author }}
 				</h5>
 				<p class="card-text">
-			        <img src="/{{ question.author.avatar }}" width="230" height="150" alt="...">
+			        <img src="/{{ question.author.avatar }}" class="img-fluid" 
+			        width="230" height="150" alt="NO FACE">
 			    </p>
 			    <button type="button" class="btn btn-white">
 				    <img src="{% static 'img/like.jpg' %}" width="25" height="25" alt="...">
-				    <span class="badge badge-success"> {{ question.like }} </span>
+				    <span class="badge badge-success"> {{ question.num_like }} </span>
 			    </button>
 			    <button type="button" class="btn btn-white">
 				    <img src="{% static 'img/dislike.jpg' %}" width="25" height="25" alt="...">
-				    <span class="badge badge-danger"> {{ question.dislike }} </span>
+				    <span class="badge badge-danger"> {{ question.num_dislike }} </span>
 			    </button>
 			</div>
 		</div>
@@ -42,14 +34,18 @@
 				<p class="card-text"> {{ question.body }} </p>
 
 				<div class="row">
-		            <div class="col-md-6">
+		            <div class="col-md-4">
 					    <a href="{% url 'question_info_url' slug=question.slug%}"> 
 					        Ответы({{ question.answers.count }})
 					    </a>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-8">
 					    <p>
-					        Теги:
+					        Тэги:
+					        {% for tag in question.tags.all %}
+					            <a href="{% url 'question_tag_url' title=tag.title %}" 
+					            class="badge badge-secondary"> {{ tag.title }} </a>
+					        {% endfor %} 
 					    </p>
 					</div>
 				</div>
